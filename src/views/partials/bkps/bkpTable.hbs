@@ -1,0 +1,49 @@
+{{#if bkps}}
+  <table class="table table-boederer table-hover table-dark">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Cliente</th>
+        <th>Servidor</th>
+        <th>Estado</th>
+        <th>Tipo</th>
+        <th data-type="date">Fecha de chequeo</th>
+        <th>Chequeado hoy</th>
+        <th>Editar</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{! VAMOS A UTILIZAR UN BUCLE FOR PARA HANDLEBARS }}
+      {{! AL EACH LE DECIMOS QUE POR CADA RECORRIDO MUESTRE UN LI }}
+      {{#each bkps}}
+        <tr>
+          {{! EL @INDEX ES EL ORDEN EN EL QUE RECORRE HANDLEBARS }}
+          <td># {{@index}}</td>
+          <td>{{client}}</td>
+          <td>{{server}}</td>
+          <td class="statusColor-{{status}}">{{status}}</td>
+          <td>{{bkpType}}</td>
+          <td>{{bkpDate}}</td>
+          <td><a href="/checkToday/{{_id}}" class="btn btn-success">HOY</a></td>
+          <td>
+            <a
+              href="/bkp/{{_id}}/edit"
+              method="GET"
+              class="btn btn-info"
+            >Editar</a>
+            {{!-- <a href="/delete/{{_id}}" class="btn btn-danger">Delete</a> --}}
+          </td>
+
+        </tr>
+
+      {{/each}}
+    </tbody>
+  </table>
+
+{{else}}
+  <div class="text-center">
+    <h1>No bkps</h1>
+  </div>
+
+{{/if}}

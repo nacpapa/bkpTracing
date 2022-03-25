@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 offset-md-3">
+      <div class="card card-body bg-dark p-4 text-white rounder-0">
+        <h1 class="text-center">
+          Editar respaldo
+        </h1>
+        <form action="/task/{{bkp._id}}/edit" method="POST">
+          <div class="mb-3">
+            <label for="client">
+              Cliente:
+            </label>
+            <input
+              class="form-control rounder-0 bg-dark text-white"
+              type="text"
+              name="client"
+              value="{{bkp.client}}"
+              id="client"
+            />
+          </div>
+          <label for="server">
+            Servidor:
+          </label>
+          <input
+            class="mb-3 form-control rounder-0 bg-dark text-white"
+            name="server"
+            type="text"
+            rows="3"
+            id="server"
+            value="{{bkp.server}}"
+          />
+          <label for="status">
+            Estado:
+          </label>
+          <input
+            class="mb-3 form-control rounder-0 bg-dark text-white"
+            name="status"
+            type="text"
+            rows="3"
+            value="{{bkp.status}}"
+            id="status"
+          />
+          <label for="bkpType">
+            Tipo de respaldo:
+          </label>
+          <input
+            class="mb-3 form-control rounder-0 bg-dark text-white"
+            name="bkpType"
+            type="text"
+            rows="3"
+            value="{{bkp.bkpType}}"
+            id="bkpType"
+          />
+          <label for="bkpDate">
+            Fecha de verificación:
+          </label>
+          <input
+            class="mb-3 form-control rounder-0 bg-dark text-white"
+            name="bkpDate"
+            type="date"
+            rows="3"
+            value="{{bkp.bkpDate}}"
+            id="bkpDate"
+          />
+          <label for="bkpObservations">
+            Observaciones:
+          </label>
+          <textarea
+            class="form-control rounder-0 bg-dark text-white"
+            name="bkpObservations"
+            placeholder="Observaciones"
+            id="bkpObservations"
+            cols="30"
+            rows="5"
+          >
+            {{bkp.bkpObservations}}
+          </textarea>
+          <button class="btn btn-success m-3">
+            Aceptar
+          </button>
+          {{!-- <a class="btn btn-danger m-3" href="/delete/{{bkp._id}}" method="GET">
+            Eliminar
+          </a> --}}
+          <button
+            type="button"
+            class="btn btn-danger"
+            id="btnEliminar"
+            onclick="eliminar('{{{bkp._id}}}')"
+          >
+            Eliminar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  function eliminar(id){ 
+    if(confirm("¿Seguro que quieres eliminar el respaldo ?")){
+      window.location.href = "/delete/"+id
+    }else {
+      window.location.href = "/"
+    }
+  }
+</script>

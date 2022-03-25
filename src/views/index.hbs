@@ -1,0 +1,17 @@
+{{#if mensaje}}
+    <div class="alert alert-primary" role="alert">
+      This is a primary alert—check it out!
+    </div>
+{{/if}}
+{{!-- IMPORTAMOS EL CODIGO DE FORMULARIO Y LISTA --}}
+<div class="container">
+    <div class="row">   
+        <div class="col-md-10">  
+            {{> filters/filterForm}}
+            {{> bkps/bkpAddBtn}}
+            {{> mailer/mailerBtn}}
+            {{> bkps/bkpTable}}
+        </div>
+    </div>
+</div>
+

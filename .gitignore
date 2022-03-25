@@ -1,0 +1,5 @@
+# ACA PONEMOS LO QUE NO QUEREMOS QUE SE SUBA A GIT
+
+node_modules
+.env
+dist

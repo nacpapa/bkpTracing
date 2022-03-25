@@ -1,0 +1,16 @@
+body {
+  background: aquamarine;
+}
+
+.statusColor-Correcto {
+  color: green;
+}
+.statusColor-Fallido {
+  color: red;
+}
+.statusColor-En.revision {
+  color: chocolate;
+}
+.statusColor-Pausado {
+  color: darkgray;
+}

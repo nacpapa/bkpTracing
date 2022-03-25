@@ -1,0 +1,8 @@
+    MENU DROPDOWN CON HANDLEBARS
+    
+    <select id='brandFilter' class='form-control'>
+      <option>Choose brand</option>
+      {{#each shoes}}
+      <option value="{{this}}">{{this.brand}}</option>
+      {{/each}}
+    </select>
